@@ -268,3 +268,181 @@ snippet setprefs "Write to defaults (setprefs)"
 endsnippet
 
 # vim:ft=snippets:
+
+###################
+#  more snippets  #
+###################
+
+
+# Random num with arc4rando
+snippet arc
+(arc4random() % ${1})${2}
+endsnippet
+
+# Code assertion
+snippet ass
+NSAssert(${1},@"${2:%@}");
+${3}
+endsnippet
+
+# Method declaration
+snippet m
+- (${1}) ${2}
+{
+   ${3}
+}
+endsnippet
+
+snippet md
+- (${1}) ${2};
+endsnippet
+
+# enum
+snippet enum
+typedef enum {
+    ${1},
+}${2:EnumName};
+endsnippet
+
+# NSUserDefaults
+snippet udr
+[[NSUserDefaults standardUserDefaults] ${1:bool}ForKey:@"${2:key}"]
+endsnippet
+
+snippet uds
+[[NSUserDefaults standardUserDefaults] set${1:Bool}:${2} forKey:@"${3:key}"];
+endsnippet
+
+snippet nsu
+[NSUserDefaults standardUserDefaults]${1} 
+#add getter & setter
+snippet pgs
+-(void) set${1} : (${2}) newValue
+{
+    _$1 = newValue;	
+}
+
+-($2) $1
+{
+    return _$1;
+
+}
+endsnippet
+
+####################
+#  Cocos2D-iphone  #
+####################
+
+#add a CCSprite
+snippet sprite
+CCSprite *${1:Sprite var name} = [CCSprite spriteWithFile:@"${2}"];
+$1.position = ccp(${3:x},${4:y});
+[self addChild:$1 z:${5}];
+${6}
+endsnippet
+
+snippet sprite
+CCSprite *${1:Sprite var name} = [CCSprite spriteWithSpriteFrameName:@"${2}"];
+$1.position = ccp(${3:x},${4:y});
+[self addChild:$1 z:${5}];
+${6}
+endsnippet
+
+snippet layout
+if(IS_IPAD){
+    ${1};
+}else{
+    ${2};
+}
+${3}
+endsnippet
+
+snippet point
+CGPoint ${1:name} = ccp(${2:x},${3:y});
+${4}
+endsnippet
+
+snippet scene
++(CCScene *) scene{
+    // 'scene' is an autorelease object.
+    CCScene *scene = [self node];
+
+    // return the scene
+    return scene;
+}${1}
+endsnippet
+
+#add a CCLabelBMFont
+snippet label 
+CCLabelBMFont *${1:label_name} = [CCLabelBMFont labelWithString:@"${2}" fntFile:${3:ftn_file_name}];
+$1.position = ccp(${3:x},${4:y});
+[self addChild:$1 z:${5}];
+${6}
+endsnippet
+
+#add CCAction
+snippet atg
+[CCToggleVisibility action]
+snippet atw
+[CCActionTween actionWithDuration: ${1:ccTime} key: @"${2:key}"
+from:${3:float} to: ${4:float}]
+endsnippet
+
+#add CCDelayTime
+snippet ade
+[CCDelayTime actionWithDuration: ${1:ccTime}] 
+endsnippet
+
+#add CCCallBlockAction
+snippet abl
+[CCCallBlock actionWithBlock:^{
+    ${1}
+}];
+endsnippet
+
+#add CCRepeatForever
+snippet arf
+[CCRepeatForever actionWithAction:${1:action}]
+endsnippet
+
+#add CallBack
+snippet afu
+[CCCallFunc actionWithTarget:${1} selector:@selector(${2})]
+endsnippet
+
+#add CCFadeOut Action
+snippet afo
+[CCFadeOut actionWithDuration:${1}]	
+endsnippet
+
+#add CCFadeIn Action
+snippet afi
+[CCFadeIn actionWithDuration:${1}]	
+endsnippet
+
+#add CCMoveBy action
+snippet amb
+[CCMoveBy actionWithDuration:${1} position:${2}];
+endsnippet
+
+#add CCMoveTo action
+snippet amt
+[CCMoveTo actionWithDuration:${1} position:${2}];
+endsnippet
+
+#add CCSequence action
+snippet ase
+[CCSequence actions: ${1}
+,nil]
+endsnippet
+
+#add Set Sprite position
+snippet pos
+ccp(SCREEN.width * ${1}, SCREEN.height * ${2});
+endsnippet
+
+#ccp macro faster
+snippet ccp
+ccp(${1}, ${2})${3}
+endsnippet
+
