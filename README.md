@@ -33,4 +33,4 @@ That should be it.
 
 ## Comments
 
-Objective-C snippets file includes several snippets for Cocos2D-iphon coding.
+Objective-C snippets file includes several snippets for Cocos2D-iphone.
