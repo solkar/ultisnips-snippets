@@ -267,20 +267,18 @@ snippet setprefs "Write to defaults (setprefs)"
 [[NSUserDefaults standardUserDefaults] setObject:${1:object} forKey:${2:key}];
 endsnippet
 
-# vim:ft=snippets:
 
 ###################
 #  more snippets  #
 ###################
 
 
-# Random num with arc4rando
-snippet arc
+snippet arc "Random num with arc4rando" w
 (arc4random() % ${1})${2}
 endsnippet
 
 # Code assertion
-snippet ass
+snippet ass "NSAssert"
 NSAssert(${1},@"${2:%@}");
 ${3}
 endsnippet
@@ -383,21 +381,20 @@ endsnippet
 #add CCAction
 snippet atg
 [CCToggleVisibility action]
-snippet atw
+snippet atw "CCActionTween" w
 [CCActionTween actionWithDuration: ${1:ccTime} key: @"${2:key}"
 from:${3:float} to: ${4:float}]
 endsnippet
 
 #add CCDelayTime
-snippet ade
+snippet ade "CCDelayTime action" w
 [CCDelayTime actionWithDuration: ${1:ccTime}] 
 endsnippet
 
-#add CCCallBlockAction
-snippet abl
+snippet abl "add CCCallBlockAction" w
 [CCCallBlock actionWithBlock:^{
     ${1}
-}];
+}]
 endsnippet
 
 #add CCRepeatForever
@@ -411,12 +408,12 @@ snippet afu
 endsnippet
 
 #add CCFadeOut Action
-snippet afo
+snippet afo "add CCFadeOut action" w
 [CCFadeOut actionWithDuration:${1}]	
 endsnippet
 
 #add CCFadeIn Action
-snippet afi
+snippet afi "add CCFadeIn action" w
 [CCFadeIn actionWithDuration:${1}]	
 endsnippet
 
@@ -430,8 +427,7 @@ snippet amt
 [CCMoveTo actionWithDuration:${1} position:${2}];
 endsnippet
 
-#add CCSequence action
-snippet ase
+snippet ase "add CCSequence action" w
 [CCSequence actions: ${1}
 ,nil]
 endsnippet
@@ -446,3 +442,4 @@ snippet ccp
 ccp(${1}, ${2})${3}
 endsnippet
 
+# vim:ft=snippets:
